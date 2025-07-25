@@ -1,0 +1,156 @@
+/* 全体的なスタイル */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+/* アコーディオンの共通スタイル */
+.accordion {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background-color: #1f1e30ff; /* 見出しの背景色 */
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #2b2a40;
+}
+
+.accordion-header h2,
+.accordion-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.accordion-header::after {
+    content: '+'; /* 閉じている時のアイコン */
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+    content: '-'; /* 開いている時のアイコン */
+    transform: rotate(0deg); /* アコーディオンが開いたときにアイコンを回転させない */
+}
+
+
+.accordion-content {
+    padding: 0 20px;
+    background-color: #f9f9f9;
+    max-height: 0; /* 最初は閉じている状態 */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.accordion-content.open {
+    max-height: 500px; /* 開いた時の最大の高さ (内容に合わせて調整) */
+    padding: 15px 20px;
+}
+
+/* 入れ子アコーディオンのスタイル */
+.inner-accordion {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border: 1px dashed #bbb; /* 親と区別する線 */
+}
+
+.inner-accordion .accordion-header {
+    background-color: #2a6fc9; /* 入れ子の見出しの背景色 */
+    padding: 10px 15px;
+}
+
+.inner-accordion .accordion-header:hover {
+    background-color: #2980b9;
+}
+
+.inner-accordion .accordion-content {
+    background-color: #ecf0f1;
+    padding: 0 15px;
+}
+
+.inner-accordion .accordion-content.open {
+    padding: 10px 15px;
+}
+
+
+/* パスワード入力エリア */
+.password-area {
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+    text-align: center;
+}
+
+.password-area input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.password-area button {
+    background-color: #e67e22;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.password-area button:hover {
+    background-color: #d35400;
+}
+
+#finalHint {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px dashed #e74c3c;
+    background-color: #fcecec;
+    color: #c0392b;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* guideline-headingのみセンタリング */
+.guideline-heading {
+    text-align: center;
+}
+.red-text {
+    color: red;
+    font-weight: bold; /* これを追加すると、red-text クラスの文字も太字になる */
+}
