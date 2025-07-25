@@ -69,13 +69,17 @@ h1 {
     padding: 0 20px;
     background-color: #f9f9f9;
     max-height: 0; /* 最初は閉じている状態 */
-    overflow: hidden;
+    overflow: hidden; /* ★変更前: hidden */
     transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    /* transition: max-height 0.3s ease-out, padding 0.3s ease-out, opacity 0.3s ease-out; /* より滑らかにするならこれも検討 */
+    opacity: 0; /* 最初は非表示 */
 }
 
 .accordion-content.open {
-    max-height: 500px; /* 開いた時の最大の高さ (内容に合わせて調整) */
+    max-height: 1000px; /* 開いた時の最大の高さをもっと大きくする（または auto にする） */
     padding: 15px 20px;
+    overflow-y: auto; /* ★変更後: 縦方向のスクロールを有効にする */
+    opacity: 1; /* 表示 */
 }
 
 /* 入れ子アコーディオンのスタイル */
