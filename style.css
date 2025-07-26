@@ -28,13 +28,13 @@ h1 {
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    overflow: hidden;
+    overflow: hidden; /* 子要素のborderRadiusを適用するため */
 }
 
 .accordion-header {
     background-color: #1f1e30ff; /* 見出しの背景色 */
     color: white;
-    padding: 15px 20px;
+    padding: 15px 20px; /* 上下15px、左右20pxのパディング */
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -47,12 +47,7 @@ h1 {
     background-color: #2b2a40;
 }
 
-.accordion-header h2,
-.accordion-header h3 {
-    margin: 0;
-    font-size: 1.2em;
-}
-
+/* ヘッダーのアイコン（+ / -） */
 .accordion-header::after {
     content: '+'; /* 閉じている時のアイコン */
     font-size: 1.5em;
@@ -64,23 +59,29 @@ h1 {
     transform: rotate(0deg); /* アコーディオンが開いたときにアイコンを回転させない */
 }
 
-
 .accordion-content {
-    padding: 0 20px;
+    padding: 0 20px; /* 閉じている時は上下のパディングを0に */
     background-color: #f9f9f9;
     max-height: 0; /* 最初は閉じている状態 */
-    overflow: hidden; /* ★変更前: hidden */
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    /* transition: max-height 0.3s ease-out, padding 0.3s ease-out, opacity 0.3s ease-out; /* より滑らかにするならこれも検討 */
-    opacity: 0; /* 最初は非表示 */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* paddingもアニメーション対象に含める */
+    overflow-y: auto; /* 縦スクロールを有効にする */
 }
 
 .accordion-content.open {
-    max-height: 1000px; /* 開いた時の最大の高さをもっと大きくする（または auto にする） */
-    padding: 15px 20px;
-    overflow-y: auto; /* ★変更後: 縦方向のスクロールを有効にする */
-    opacity: 1; /* 表示 */
+    max-height: 300px; /* ここに適切な最大高さを指定してください（例: 300px）。これを超えるとスクロールします。 */
+    padding: 15px 20px; /* 開いた時に上下15px、左右20pxのパディング */
 }
+
+/* ヒント本文（アコーディオンコンテンツ内のテキスト）の余白 */
+.hint-body {
+    padding: 5px 0; /* ヒント本文とアコーディオンコンテンツの境界に少し余白を追加 */
+}
+.hint-body p {
+    margin: 0; /* pタグのデフォルトマージンをリセット */
+    padding: 0; /* pタグのデフォルトパディングをリセット */
+}
+
 
 /* 入れ子アコーディオンのスタイル */
 .inner-accordion {
@@ -91,7 +92,7 @@ h1 {
 
 .inner-accordion .accordion-header {
     background-color: #2a6fc9; /* 入れ子の見出しの背景色 */
-    padding: 10px 15px;
+    padding: 10px 15px; /* 上下10px、左右15pxのパディング */
 }
 
 .inner-accordion .accordion-header:hover {
@@ -100,13 +101,17 @@ h1 {
 
 .inner-accordion .accordion-content {
     background-color: #ecf0f1;
-    padding: 0 15px;
+    padding: 0 15px; /* 閉じている時は上下のパディングを0に */
+    max-height: 0; /* 最初は閉じている状態 */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* paddingもアニメーション対象に含める */
+    overflow-y: auto; /* 縦スクロールを有効にする */
 }
 
 .inner-accordion .accordion-content.open {
-    padding: 10px 15px;
+    max-height: 200px; /* 入れ子アコーディオンの最大高さ (必要に応じて調整) */
+    padding: 10px 15px; /* 開いた時に上下10px、左右15pxのパディング */
 }
-
 
 /* パスワード入力エリア */
 .password-area {
@@ -150,11 +155,16 @@ h1 {
     font-weight: bold;
 }
 
-/* guideline-headingのみセンタリング */
 .guideline-heading {
     text-align: center;
 }
 .red-text {
     color: red;
-    font-weight: bold; /* これを追加すると、red-text クラスの文字も太字になる */
+    font-weight: bold;
+}
+.hint-image {
+    max-width: 100%; /* 画像が親要素からはみ出さないように調整 */
+    height: auto;
+    display: block; /* 画像の下に余白ができないようにブロック要素にする */
+    margin: 10px 0; /* 上下に余白を追加 */
 }
