@@ -174,14 +174,14 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* 画面いっぱいに表示 */
     text-align: center;
 }
 
 #start-screen h1 {
     font-size: 2.5em;
     margin-bottom: 0.5em;
-    color: #2c3e50;
+    color: #2c3e50; /* 既存のh1と合わせる */
 }
 
 #start-screen p {
@@ -192,7 +192,7 @@ h1 {
 #show-hint-button {
     padding: 15px 30px;
     font-size: 1.2em;
-    background-color: #3498db;
+    background-color: #3498db; /* ボタンの色 */
     color: white;
     border: none;
     border-radius: 5px;
@@ -202,11 +202,4 @@ h1 {
 
 #show-hint-button:hover {
     background-color: #2980b9;
-}
-
-#hint-content {
-    background-color: #fff;
-    min-height: 100vh;
-    overflow-y: auto;
-    padding: 20px;
 }
