@@ -1,16 +1,3 @@
-以下の変更を加えてCSSを更新しました。
-
-bodyのpadding: 20pxを削除し、overflow-x: hiddenを追加して横方向のスクロールバーを非表示にしました。
-
-#start-screenのスタイルを、画像背景とテキストを重ねて表示するように修正しました。
-
-#hint-contentのスタイルを、ヒントサイトの内容を正しく表示するように変更しました。
-
-#start-screenに適用するmain-visual-backgroundクラスと#overlayのスタイルを追加しました。
-
-更新後のCSS
-CSS
-
 /* 全体的なスタイル */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
