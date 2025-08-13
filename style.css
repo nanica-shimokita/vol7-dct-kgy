@@ -6,6 +6,7 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
+    font-size: 1.1em; /* 全体の基準となるフォントサイズを少し大きくする */
 }
 
 .container {
@@ -21,6 +22,7 @@ h1 {
     text-align: center;
     color: #2c3e50;
     margin-bottom: 40px;
+    font-size: 2em; /* bodyの1.1emを基準に2倍に */
 }
 
 /* アコーディオンの共通スタイル */
@@ -80,6 +82,7 @@ h1 {
 .hint-body p {
     margin: 0;
     padding: 0;
+    font-size: 1em; /* bodyのフォントサイズを継承 */
 }
 
 
