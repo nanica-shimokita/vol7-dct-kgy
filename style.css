@@ -163,7 +163,7 @@ h1 {
     font-weight: bold;
 }
 .hint-image {
-    max-width: 400px; /* 画像が親要素からはみ出さないように調整 */
+    max-width: 200px; /* 画像が親要素からはみ出さないように調整 */
     height: auto;
     display: block; /* 画像の下に余白ができないようにブロック要素にする */
     margin: 10px 0; /* 上下に余白を追加 */
