@@ -29,7 +29,7 @@ h1 {
 .accordion {
     margin-bottom: 15px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
