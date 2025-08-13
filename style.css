@@ -5,8 +5,7 @@ body {
     color: #333;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* 横方向のスクロールバーを非表示にする */
+    padding: 20px;
 }
 
 .container {
@@ -29,13 +28,13 @@ h1 {
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    overflow: hidden; /* 子要素のborderRadiusを適用するため */
+    overflow: hidden;
 }
 
 .accordion-header {
-    background-color: #1f1e30ff; /* 見出しの背景色 */
+    background-color: #1f1e30ff;
     color: white;
-    padding: 15px 20px; /* 上下15px、左右20pxのパディング */
+    padding: 15px 20px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -50,37 +49,37 @@ h1 {
 
 /* ヘッダーのアイコン（+ / -） */
 .accordion-header::after {
-    content: '+'; /* 閉じている時のアイコン */
+    content: '+';
     font-size: 1.5em;
     transition: transform 0.3s ease;
 }
 
 .accordion-header.active::after {
-    content: '-'; /* 開いている時のアイコン */
-    transform: rotate(0deg); /* アコーディオンが開いたときにアイコンを回転させない */
+    content: '-';
+    transform: rotate(0deg);
 }
 
 .accordion-content {
-    padding: 0 20px; /* 閉じている時は上下のパディングを0に */
+    padding: 0 20px;
     background-color: #f9f9f9;
-    max-height: 0; /* 最初は閉じている状態 */
+    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* paddingもアニメーション対象に含める */
-    overflow-y: auto; /* 縦スクロールを有効にする */
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    overflow-y: auto;
 }
 
 .accordion-content.open {
-    max-height: 700px; /* ここに適切な最大高さを指定してください（例: 300px）。これを超えるとスクロールします。 */
-    padding: 15px 20px; /* 開いた時に上下15px、左右20pxのパディング */
+    max-height: 700px;
+    padding: 15px 20px;
 }
 
 /* ヒント本文（アコーディオンコンテンツ内のテキスト）の余白 */
 .hint-body {
-    padding: 5px 0; /* ヒント本文とアコーディオンコンテンツの境界に少し余白を追加 */
+    padding: 5px 0;
 }
 .hint-body p {
-    margin: 0; /* pタグのデフォルトマージンをリセット */
-    padding: 0; /* pタグのデフォルトパディングをリセット */
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -88,12 +87,12 @@ h1 {
 .inner-accordion {
     margin-top: 15px;
     margin-bottom: 10px;
-    border: 1px dashed #bbb; /* 親と区別する線 */
+    border: 1px dashed #bbb;
 }
 
 .inner-accordion .accordion-header {
-    background-color: #2a6fc9; /* 入れ子の見出しの背景色 */
-    padding: 10px 15px; /* 上下10px、左右15pxのパディング */
+    background-color: #2a6fc9;
+    padding: 10px 15px;
 }
 
 .inner-accordion .accordion-header:hover {
@@ -102,16 +101,16 @@ h1 {
 
 .inner-accordion .accordion-content {
     background-color: #ecf0f1;
-    padding: 0 15px; /* 閉じている時は上下のパディングを0に */
-    max-height: 0; /* 最初は閉じている状態 */
+    padding: 0 15px;
+    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* paddingもアニメーション対象に含める */
-    overflow-y: auto; /* 縦スクロールを有効にする */
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    overflow-y: auto;
 }
 
 .inner-accordion .accordion-content.open {
-    max-height: 500px; /* 入れ子アコーディオンの最大高さ (必要に応じて調整) */
-    padding: 10px 15px; /* 開いた時に上下10px、左右15pxのパディング */
+    max-height: 500px;
+    padding: 10px 15px;
 }
 
 /* パスワード入力エリア */
@@ -164,68 +163,50 @@ h1 {
     font-weight: bold;
 }
 .hint-image {
-    max-width: 200px; /* 画像が親要素からはみ出さないように調整 */
+    max-width: 200px;
     height: auto;
-    display: block; /* 画像の下に余白ができないようにブロック要素にする */
-    margin: 10px 0; /* 上下に余白を追加 */
+    display: block;
+    margin: 10px 0;
 }
 /* スタート画面のスタイル */
 #start-screen {
-    position: relative;
-    height: 100vh;
-    color: white; /* テキストを白にして見やすくする */
-    text-shadow: 2px 2px 4px #000; /* テキストに影をつけて見やすくする */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     text-align: center;
-    padding: 20px; /* 余白を追加 */
 }
 
-/* メインビジュアルの背景画像 */
-.main-visual-background {
-    background-image: url('main_visual.jpg');
-    background-size: cover;
-    background-position: center;
+#start-screen h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #2c3e50;
 }
 
-/* 背景画像の上に重ねる半透明のレイヤー */
-#overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 黒の半透明 */
-    z-index: 1;
-}
-
-/* start-screen内の要素をオーバーレイの上に配置 */
-#start-screen h1, #start-screen p, #show-hint-button {
-    z-index: 2; /* オーバーレイの上に配置 */
-    position: relative; /* z-indexを有効にするため */
+#start-screen p {
+    font-size: 1.2em;
+    margin-bottom: 2em;
 }
 
 #show-hint-button {
-    padding: 15px 30px;
-    font-size: 1.2em;
-    background-color: #3498db; /* ボタンの色 */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 #show-hint-button:hover {
-    background-color: #2980b9;
+    background-color: #2980b9;
 }
 
-/* ヒントコンテンツのスタイル */
 #hint-content {
     background-color: #fff;
-    min-height: 100vh; /* 画面の高さに合わせ、コンテンツがはみ出したらスクロール可能に */
+    min-height: 100vh;
     overflow-y: auto;
-    padding: 20px; /* 全体の余白 */
+    padding: 20px;
 }
