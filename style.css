@@ -6,7 +6,7 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
-    font-size: 1.4em; /* 全体の基準となるフォントサイズを少し大きくする */
+    font-size: 1.8em; /* 全体の基準となるフォントサイズを少し大きくする */
 }
 
 .container {
@@ -82,7 +82,7 @@ h1 {
 .hint-body p {
     margin: 0;
     padding: 0;
-    font-size: 1em; /* bodyのフォントサイズを継承 */
+    font-size: 1.4em; /* bodyのフォントサイズを継承 */
 }
 
 
