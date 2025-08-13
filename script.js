@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     accordionHeaders.forEach(header => {
         header.addEventListener('click', function() {
-            const parentAccordion = this.closest('.accordion');
-            const accordionContent = parentAccordion.querySelector('.accordion-content');
+            // closest()は不要
+            const accordionContent = this.nextElementSibling;
 
             if (accordionContent) {
                 if (accordionContent.classList.contains('open')) {
